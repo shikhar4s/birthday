@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Ananya 💖</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(135deg,#fff7fb,#ffddee,#ffeef7);
+
+color:#7c4964;
+}
+
+/* BACKGROUND */
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at top left,#ffcce6 0%,transparent 30%),
+radial-gradient(circle at bottom right,#ffd6f0 0%,transparent 35%);
+
+animation:bgMove 10s ease infinite alternate;
+
+z-index:-2;
+}
+
+@keyframes bgMove{
+from{transform:scale(1)}
+to{transform:scale(1.08)}
+}
+
+/* STICKERS */
+
+.sticker{
+position:absolute;
+font-size:32px;
+opacity:0.45;
+pointer-events:none;
+z-index:0;
+animation:floatSticker 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatSticker{
+
+from{
+transform:translateY(0px) rotate(-6deg);
+}
+
+to{
+transform:translateY(-15px) rotate(6deg);
+}
+
+}
+
+/* HEARTS */
+
+.heart{
+position:absolute;
+font-size:22px;
+opacity:0.4;
+animation:floatHeart linear infinite;
+pointer-events:none;
+}
+
+@keyframes floatHeart{
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+10%{
+opacity:0.6;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* SCREEN */
+
+.screen{
+position:absolute;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+transition:1.5s cubic-bezier(.22,1,.36,1);
+}
+
+.hidden{
+opacity:0;
+pointer-events:none;
+transform:scale(1.1);
+filter:blur(15px);
+}
+
+/* INTRO */
+
+#intro{
+text-align:center;
+padding:30px;
+}
+
+.main-title{
+font-family:'Dancing Script',cursive;
+font-size:clamp(55px,8vw,95px);
+
+background:
+linear-gradient(
+135deg,
+#ff69b4,
+#ff85c2,
+#d8b4fe
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:glow 4s infinite;
+}
+
+@keyframes glow{
+0%{
+filter:drop-shadow(0 0 8px #ffb6d9);
+}
+50%{
+filter:drop-shadow(0 0 30px #ff69b4);
+}
+100%{
+filter:drop-shadow(0 0 8px #ffb6d9);
+}
+}
+
+.subtitle{
+margin-top:20px;
+font-size:18px;
+color:#c26694;
+}
+
+.glow-btn{
+margin-top:40px;
+padding:16px 42px;
+border:none;
+border-radius:999px;
+
+background:
+linear-gradient(
+135deg,
+#ff69b4,
+#ff85c2,
+#ffc1e3
+);
+
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+
+box-shadow:
+0 10px 35px rgba(255,105,180,0.35);
+
+transition:0.4s;
+}
+
+.glow-btn:hover{
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:
+0 15px 45px rgba(255,105,180,0.5);
+}
+
+/* MAIN */
+
+#main{
+padding-top:70px;
+}
+
+.nav{
+position:absolute;
+top:0;
+left:0;
+right:0;
+
+padding:18px 25px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:rgba(255,255,255,0.3);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,182,193,0.3);
+}
+
+.nav h2{
+font-family:'Dancing Script',cursive;
+font-size:32px;
+color:#ff69b4;
+}
+
+.content{
+width:100%;
+height:100%;
+max-width:1100px;
+overflow-y:auto;
+padding:30px;
+}
+
+/* TABS */
+
+.tabs{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-bottom:35px;
+}
+
+.tab{
+padding:10px 20px;
+border:none;
+border-radius:999px;
+background:rgba(255,255,255,0.45);
+color:#c75f93;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.locked{
+opacity:.5;
+cursor:not-allowed;
+filter:grayscale(1);
+}
+
+.tab.active,
+.tab:hover{
+background:
+linear-gradient(
+135deg,
+#ff69b4,
+#ff85c2
+);
+
+color:white;
+transform:translateY(-2px);
+}
+
+/* PANELS */
+
+.panel{
+display:none;
+animation:fade 0.7s ease;
+}
+
+.panel.active{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* HEADINGS */
+
+.heading{
+text-align:center;
+margin-bottom:30px;
+}
+
+.heading h1{
+font-family:'Dancing Script',cursive;
+font-size:60px;
+
+background:
+linear-gradient(
+135deg,
+#ff69b4,
+#d8b4fe
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.heading p{
+margin-top:10px;
+color:#c26694;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.count-card{
+width:110px;
+height:110px;
+
+background:rgba(255,255,255,0.45);
+
+backdrop-filter:blur(18px);
+
+border-radius:30px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+box-shadow:
+0 10px 35px rgba(255,105,180,0.2);
+
+animation:float 2s infinite alternate;
+}
+
+@keyframes float{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-10px);
+}
+}
+
+.count-card h2{
+font-size:34px;
+color:#ff69b4;
+}
+
+.count-card span{
+margin-top:5px;
+font-size:13px;
+color:#c26694;
+}
+
+/* LOVE */
+
+.reason-card{
+max-width:650px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,0.45);
+border-radius:30px;
+text-align:center;
+
+box-shadow:
+0 10px 35px rgba(255,105,180,0.2);
+}
+
+.reason-card p{
+font-size:22px;
+line-height:1.8;
+}
+
+/* LETTER */
+
+.letter{
+max-width:700px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,0.45);
+border-radius:30px;
+line-height:2;
+font-size:18px;
+
+box-shadow:
+0 10px 35px rgba(255,105,180,0.2);
+}
+
+/* MEMORIES */
+
+.memory-viewer{
+position:relative;
+width:100%;
+max-width:900px;
+margin:auto;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.memory-slide{
+
+width:100%;
+
+height:85vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+background:rgba(255,255,255,0.4);
+
+backdrop-filter:blur(15px);
+
+padding:20px;
+
+border-radius:35px;
+
+}
+.memory-slide img,
+.memory-slide video{
+
+width:100%;
+height:100%;
+
+object-fit:contain;
+
+background:black;
+
+display:block;
+
+}
+
+.memory-caption{
+text-align:center;
+padding:15px;
+color:#c26694;
+font-weight:600;
+font-size:18px;
+}
+
+#memoryCounter{
+position:absolute;
+top:15px;
+right:20px;
+background:rgba(255,255,255,.8);
+padding:8px 14px;
+border-radius:30px;
+font-weight:600;
+color:#ff69b4;
+z-index:20;
+}
+
+/* ARROWS */
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+
+width:60px;
+height:60px;
+
+border:none;
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#ff69b4,
+#ff85c2
+);
+
+color:white;
+font-size:28px;
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(255,105,180,0.3);
+
+z-index:10;
+transition:0.3s;
+}
+
+.arrow:hover{
+transform:translateY(-50%) scale(1.08);
+}
+
+.left-arrow{
+left:-25px;
+}
+
+.right-arrow{
+right:-25px;
+}
+
+/* FINAL */
+
+.final-screen{
+text-align:center;
+padding:40px;
+background:rgba(255,255,255,0.45);
+border-radius:40px;
+
+box-shadow:
+0 15px 45px rgba(255,105,180,0.25);
+}
+
+.final-screen h1{
+font-family:'Dancing Script',cursive;
+font-size:80px;
+
+background:
+linear-gradient(
+135deg,
+#ff69b4,
+#d8b4fe
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:glow 3s infinite;
+}
+
+.final-screen p{
+margin-top:20px;
+font-size:22px;
+line-height:1.8;
+}
+
+function unlockBirthdayWebsite(){
+
+document.getElementById('loveTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'love\',this)">Love</button>';
+
+document.getElementById('letterTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'letter\',this)">Letter</button>';
+
+document.getElementById('memoryTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'memories\',this)">Memories</button>';
+
+document.getElementById('birthdayTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'birthday\',this)">Birthday 🎂</button>';
+
+}
+
+/* CELEBRATION */
+
+#celebration{
+
+position:fixed;
+inset:0;
+
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+background:
+rgba(255,240,248,0.88);
+
+backdrop-filter:blur(10px);
+
+z-index:999;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+#celebration h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:90px;
+
+text-align:center;
+
+z-index:10;
+
+background:
+linear-gradient(
+135deg,
+#ff69b4,
+#d8b4fe
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:birthdayGlow 2s infinite alternate;
+
+}
+
+@keyframes birthdayGlow{
+
+from{
+transform:scale(1);
+filter:drop-shadow(0 0 10px #ff69b4);
+}
+
+to{
+transform:scale(1.05);
+filter:drop-shadow(0 0 30px #ff69b4);
+}
+
+}
+
+.celebration-text{
+
+margin-top:15px;
+
+font-size:24px;
+
+color:#c26694;
+
+z-index:10;
+
+}
+
+/* GIFS */
+
+.fullscreen-confetti{
+
+position:absolute;
+inset:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+opacity:0.8;
+
+z-index:1;
+
+}
+
+.birthday-banner{
+
+position:absolute;
+
+top:0;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:500px;
+
+z-index:5;
+
+}
+
+.dance-left{
+
+position:absolute;
+
+left:2%;
+
+bottom:5%;
+
+width:220px;
+
+z-index:6;
+
+}
+
+.clap-left{
+
+position:absolute;
+
+left:18%;
+
+bottom:3%;
+
+width:170px;
+
+z-index:6;
+
+}
+
+.dance-right{
+
+position:absolute;
+
+right:2%;
+
+bottom:5%;
+
+width:220px;
+
+transform:scaleX(-1);
+
+z-index:6;
+
+}
+
+.cake-gif{
+
+width:180px;
+
+margin-top:15px;
+
+z-index:10;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.heading h1{
+font-size:45px;
+}
+
+.final-screen h1{
+font-size:55px;
+}
+
+.count-card{
+width:85px;
+height:85px;
+}
+
+.count-card h2{
+font-size:26px;
+}
+
+#celebration h1{
+font-size:55px;
+padding:0 20px;
+}
+
+.birthday-banner{
+width:280px;
+}
+
+.dance-left{
+width:120px;
+left:-5%;
+}
+
+.clap-left{
+width:90px;
+left:15%;
+}
+
+.dance-right{
+width:120px;
+right:-5%;
+}
+
+.cake-gif{
+width:120px;
+}
+
+.celebration-text{
+font-size:18px;
+}
+
+.arrow{
+width:45px;
+height:45px;
+font-size:22px;
+}
+
+.left-arrow{
+left:-10px;
+}
+
+.right-arrow{
+right:-10px;
+}
+
+.memory-slide img,
+.memory-slide video{
+
+width:100%;
+height:100%;
+
+object-fit:contain;
+
+background:black;
+
+display:block;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- STICKERS -->
+
+<div class="sticker" style="top:8%;left:5%">🎂</div>
+<div class="sticker" style="top:15%;right:10%">🧸</div>
+<div class="sticker" style="bottom:10%;left:8%">🎀</div>
+<div class="sticker" style="bottom:12%;right:10%">🎁</div>
+<div class="sticker" style="top:45%;left:3%">🐼</div>
+<div class="sticker" style="top:60%;right:4%">🍓</div>
+<div class="sticker" style="top:78%;left:20%">🌸</div>
+<div class="sticker" style="top:30%;right:25%">✨</div>
+<div class="sticker" style="top:85%;right:30%">💖</div>
+
+<!-- HEARTS -->
+
+<div class="heart" style="left:10%;animation-duration:10s;">💖</div>
+<div class="heart" style="left:30%;animation-duration:12s;">💕</div>
+<div class="heart" style="left:60%;animation-duration:9s;">🌸</div>
+<div class="heart" style="left:80%;animation-duration:11s;">💗</div>
+
+<!-- AUDIO -->
+
+<audio id="celebrationSound" src="celebration.mp3"></audio>
+<audio id="bgMusic" src="perfect.mp3" loop></audio>
+
+<!-- INTRO -->
+
+<div class="screen" id="intro">
+
+<h1 class="main-title">
+Happy Birthday Ananya 💖
+</h1>
+
+<p class="subtitle">
+A magical little corner made only for Ananya Jain ✨
+</p>
+
+<button class="glow-btn" onclick="enterSite()">
+Enter My Heart 💕
+</button>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="screen hidden" id="main">
+
+<div class="nav">
+<h2>Ananya Jain 💖</h2>
+</div>
+
+<div class="content">
+
+<div class="tabs">
+
+<button class="tab active" onclick="showPanel('countdown',this)">
+Countdown
+</button>
+
+<button class="tab locked" id="loveTab">🔒 Love</button>
+
+<button class="tab locked" id="letterTab">🔒 Letter</button>
+
+<button class="tab locked" id="memoryTab">🔒 Memories</button>
+
+<button class="tab locked" id="birthdayTab">🔒 Birthday 🎂</button>
+
+</div>
+
+<!-- COUNTDOWN -->
+
+<div class="panel active" id="countdown">
+
+<div class="heading">
+<h1>Counting Down To Your Birthday 💖</h1>
+<p>Every second brings us closer to your special day, Ananya ✨</p>
+</div>
+
+<div class="countdown" id="countdownBox"></div>
+
+</div>
+
+<!-- LOVE -->
+
+<div class="panel" id="love">
+
+<div class="heading">
+<h1>Why I Love You 💕</h1>
+</div>
+
+<div class="reason-card">
+
+<p id="reasonText">
+Your smile makes my whole world brighter 💖
+</p>
+
+<button class="glow-btn" onclick="nextReason()">
+Another Reason 💕
+</button>
+
+</div>
+
+</div>
+
+<!-- LETTER -->
+
+<div class="panel" id="letter">
+
+<div class="heading">
+<h1>A Letter For Ananya 💌</h1>
+</div>
+
+<div class="letter">
+
+My Dearest Ananya,<br><br>
+
+You are the softest and most beautiful part of my life 💖<br><br>
+
+Every moment with you feels magical, every smile of yours feels like home, and every memory with you is something I want forever ✨<br><br>
+
+On your birthday, I just want you to know how deeply loved you are 🌸<br><br>
+
+Forever yours ❤️
+
+</div>
+
+</div>
+
+<!-- MEMORIES -->
+
+<div class="panel" id="memories">
+
+<div class="heading">
+<h1>Our Memories 📸</h1>
+<p>Fullscreen Memory Gallery 💖</p>
+</div>
+
+<div class="memory-viewer"><div id="memoryCounter">1 / 56</div>
+
+<button class="arrow left-arrow" onclick="prevMemory()">
+❮
+</button>
+
+<div class="memory-slide" id="memoryContainer"></div>
+
+<button class="arrow right-arrow" onclick="nextMemory()">
+❯
+</button>
+
+</div>
+
+</div>
+
+<!-- FINAL -->
+
+<div class="panel" id="birthday">
+
+<div class="final-screen">
+
+<h1>
+Happy Birthday Ananya 💖
+</h1>
+
+<p>
+You are my favorite person, my safest place, and the most beautiful thing in my life ✨<br><br>
+
+I hope this birthday feels as magical as you make my world feel every day 🌸💕
+</p>
+
+<div style="font-size:45px;margin-top:25px;">
+💖 ✨ 🌸 🎂 💕
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CELEBRATION -->
+
+<div id="celebration">
+
+<img src="confetti-montego.gif" class="fullscreen-confetti">
+
+<img src="felicidades.gif" class="birthday-banner">
+
+<img src="happy-dance.gif" class="dance-left">
+
+<img src="clap-clapping.gif" class="clap-left">
+
+<img src="happy-doctors-day.gif" class="dance-right">
+
+<h1>
+Happy Birthday Ananya 💖
+</h1>
+
+<img src="hasher-happy-sticker.gif" class="cake-gif">
+
+<p class="celebration-text">
+The wait is finally over ✨
+</p>
+
+</div>
+
+<script>
+
+/* ENTER */
+
+function enterSite(){
+
+document.getElementById('intro')
+.classList.add('hidden');
+
+setTimeout(()=>{
+document.getElementById('main')
+.classList.remove('hidden');
+},1400);
+
+}
+
+/* TABS */
+
+function showPanel(id,btn){
+
+document.querySelectorAll('.panel')
+.forEach(p=>p.classList.remove('active'));
+
+document.getElementById(id)
+.classList.add('active');
+
+document.querySelectorAll('.tab')
+.forEach(t=>t.classList.remove('active'));
+
+btn.classList.add('active');
+
+}
+
+/* COUNTDOWN */
+
+let celebrationStarted = false;
+
+const target = new Date("June 3, 2026 00:00:00");
+
+function updateCountdown(){
+
+const now = new Date();
+
+const diff = target - now;
+
+const box =
+document.getElementById('countdownBox');
+
+if(diff <= 0){
+
+box.innerHTML = `
+<div class="final-screen">
+<h1>🎂 Today Is Your Day Ananya 💖</h1>
+</div>
+`;
+
+if(!celebrationStarted){
+
+celebrationStarted = true;
+
+unlockBirthdayWebsite();
+
+startCelebration();
+
+}
+
+return;
+}
+
+const days =
+Math.floor(diff/(1000*60*60*24));
+
+const hours =
+Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+
+const minutes =
+Math.floor((diff%(1000*60*60))/(1000*60));
+
+const seconds =
+Math.floor((diff%(1000*60))/1000);
+
+box.innerHTML = `
+
+<div class="count-card">
+<h2>${days}</h2>
+<span>Days</span>
+</div>
+
+<div class="count-card">
+<h2>${hours}</h2>
+<span>Hours</span>
+</div>
+
+<div class="count-card">
+<h2>${minutes}</h2>
+<span>Minutes</span>
+</div>
+
+<div class="count-card">
+<h2>${seconds}</h2>
+<span>Seconds</span>
+</div>
+
+`;
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+/* LOVE */
+
+const reasons = [
+
+"Your smile can fix even my worst days. 💖",
+
+"The way you laugh makes everything feel lighter. ✨",
+
+"You make ordinary moments feel magical. 🌸",
+
+"Because being with you feels like home. 🏡",
+
+"The way you care about people is beautiful. ❤️",
+
+"You always support me even when I doubt myself. 💕",
+
+"Your eyes tell stories I never get tired of reading. 👀",
+
+"Because you make me want to become a better person. 🌷",
+
+"You understand me in ways nobody else can. 💖",
+
+"Every memory with you becomes one of my favorites. 📸",
+
+"The way you get excited about little things is adorable. 🥺",
+
+"You make me laugh when I don't even want to smile. 😊",
+
+"Because you are both my peace and my adventure. ✨",
+
+"The way you hold my hand makes the world disappear. 🤍",
+
+"You make every day worth looking forward to. 🌸",
+
+"Your kindness is one of the most beautiful things about you. 💕",
+
+"Because life feels brighter with you in it. ☀️",
+
+"You are my favorite notification. 📱❤️",
+
+"The way you love is pure and genuine. 🌷",
+
+"Because no matter where I am, my heart finds its way back to you. 💖",
+
+"Because you're Ananya, and that's more than enough reason. 👑💗"
+
+];
+
+let current = 0;
+
+function nextReason(){
+
+current =
+(current + 1) % reasons.length;
+
+document.getElementById('reasonText')
+.innerText = reasons[current];
+
+}
+
+/* MEMORIES */
+
+const memories = [
+
+/* MAIN VIDEO FIRST */
+
+{
+type:'video',
+src:'main_video.mp4',
+caption:'Our Story Begins 💖'
+},
+
+/* PHOTOS */
+
+{
+type:'image',
+src:'photo_1_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_2_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_3_2026-06-02_22-24-52.jpg'
+},
+
+/* VIDEO */
+
+{
+type:'video',
+src:'video_2026-06-02_22-28-21.mp4',
+caption:'A Beautiful Moment ✨'
+},
+
+/* PHOTOS */
+
+{
+type:'image',
+src:'photo_4_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_5_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_6_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_7_2026-06-02_22-24-52.jpg'
+},
+
+/* VIDEO */
+
+{
+type:'video',
+src:'video_2026-06-02_22-24-52 (4).mp4',
+caption:'One Of My Favorite Memories 💕'
+},
+
+/* PHOTOS */
+
+{
+type:'image',
+src:'photo_8_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_9_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_10_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_11_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_12_2026-06-02_22-24-52.jpg'
+},
+
+/* VIDEO */
+
+{
+type:'video',
+src:'video_2026-06-02_22-24-52 (2).mp4',
+caption:'Forever Us ❤️'
+},
+
+/* REMAINING PHOTOS */
+
+{
+type:'image',
+src:'photo_13_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_14_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_15_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_16_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_17_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_18_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_19_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_20_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_21_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_22_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_23_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_24_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_25_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_26_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_27_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_28_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_29_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_30_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_31_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_32_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_33_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_34_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_35_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_36_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_37_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_38_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_39_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_40_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_41_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_42_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_43_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_44_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_45_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_46_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_47_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_48_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_49_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_50_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_51_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_52_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_53_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_54_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_55_2026-06-02_22-24-52.jpg'
+},
+
+{
+type:'image',
+src:'photo_56_2026-06-02_22-24-52.jpg'
+}
+
+];
+
+let memoryIndex = 0;
+
+function renderMemory(){
+
+const memory = memories[memoryIndex];
+const mc=document.getElementById('memoryCounter');
+if(mc){mc.innerText=`${memoryIndex+1} / ${memories.length}`;}
+
+const container =
+document.getElementById('memoryContainer');
+
+if(memory.type === 'image'){
+
+container.innerHTML = `
+<img src="${memory.src}">
+<div class="memory-caption">
+${memory.caption}
+</div>
+`;
+
+}else{
+
+container.innerHTML = `
+<video controls autoplay playsinline id="memoryVideo">
+<source src="${memory.src}" type="video/mp4">
+</video>
+
+<div class="memory-caption">
+${memory.caption || ''}
+</div>
+`;
+
+setTimeout(() => {
+const vid = document.getElementById('memoryVideo');
+if(vid){ vid.onended = () => nextMemory(); }
+},100);
+
+}
+
+}
+
+function nextMemory(){
+
+memoryIndex =
+(memoryIndex + 1) % memories.length;
+
+renderMemory();
+
+}
+
+function prevMemory(){
+
+memoryIndex =
+(memoryIndex - 1 + memories.length) % memories.length;
+
+renderMemory();
+
+}
+
+renderMemory();
+
+function unlockBirthdayWebsite(){
+
+document.getElementById('loveTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'love\',this)">Love</button>';
+
+document.getElementById('letterTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'letter\',this)">Letter</button>';
+
+document.getElementById('memoryTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'memories\',this)">Memories</button>';
+
+document.getElementById('birthdayTab').outerHTML =
+'<button class="tab" onclick="showPanel(\'birthday\',this)">Birthday 🎂</button>';
+
+}
+
+/* CELEBRATION */
+
+function startCelebration(){
+
+const celebration =
+document.getElementById('celebration');
+
+celebration.style.display = 'flex';
+
+const celebrationAudio =
+document.getElementById('celebrationSound');
+
+celebrationAudio.currentTime = 0;
+
+celebrationAudio.play();
+
+/* START PERFECT SONG */
+
+setTimeout(()=>{
+
+const bgMusic =
+document.getElementById('bgMusic');
+
+bgMusic.volume = 0.35;
+
+bgMusic.play();
+
+},5000);
+
+/* HIDE CELEBRATION */
+
+setTimeout(()=>{
+
+celebration.style.transition = '1s';
+
+celebration.style.opacity = '0';
+
+setTimeout(()=>{
+
+celebration.style.display = 'none';
+
+},1000);
+
+},12000);
+
+}
+
+</script>
+
+</body>
+</html>
